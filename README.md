@@ -9,8 +9,10 @@
 We are looking to learn from years past to help us make investment decisions as we go into a slowing economy. We will be reviewing data from 2008 and 2009 but we will specifically be looking at IPOs. More specifically we will be looking IPOs per year, the initial valuations, and then subsequent performance in one year. Once we have this information we will make a predictive model to help us make the best choices going into our first investments. 
 
 - Description of the source of data:
+StockAnalysis.com for a list of IPOS launched in the last recession 2008. Kaggle for a list of US Company information on these IPOS. Finally an API of historical pricing data to train our model for future price predictions.  
 
 - Questions we hope to answer with the data:
+Like Warren Buffet, we'd like to capitalize on a down market in the next recession by investing in "Recession Proof IPOs". Specifically buying low and selling high. Our model will try to predict if such a thing exists based on prior IPO performance in the last recession. 
 
 **GitHub Respository**
 
