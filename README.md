@@ -1,4 +1,4 @@
-# Final_Project
+# Recession_Resistant_IPOs
 
 ## Deliverable 1
 
