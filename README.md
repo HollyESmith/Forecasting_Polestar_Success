@@ -1,6 +1,6 @@
 # Recession_Resistant_IPOs
 
-## Deliverable 1
+## Deliverable 1, Due 7/17/2022
 
 ### Project Outline
 
@@ -43,3 +43,49 @@ Like Warren Buffet, we'd like to capitalize on a down market in the next recessi
 **Dashboard**
   
   No deliverables for segment 1
+  
+## Deliverable 2, Due 7/24/2022
+
+**Presentation**
+
+Presentation is drafted in Google Slides. 
+
+**GitHub Respository**
+
+Main Branch:
+
+- All code in the main branch is production-ready. Main branch should include:
+
+  - All code necessary to perform exporatory analysis
+  
+  - Some code necessary to complete the machine learning portion of the project.
+  
+- README must include: 
+
+  - outline of the project (this may include images, but should be easy to follow and digest) 
+
+  - descriptions and explanations required in all other project deliverables
+  
+- Each team member has at least four commits for the duration of the second segment 
+
+**Machine Learning Model**
+
+- Team members submit the code for their machine learning model, as well as:
+
+  - Description of preliminary data preprocessing
+ 
+  - Description of preliminary feature engineering and preliminary feature selection, including their decision-making process 
+ 
+  - Description of how data was split into training and testing sets
+
+  - Explanation of model choice, including limitations and benefits 
+ 
+**Database**
+
+- Blueprint for the dasboard is created and includes all of the following:
+
+  - Storyboard on Google Slides
+  
+  - Description of the tools that will be used to create the final dashboard
+  
+  - Description of interactive element(s)
