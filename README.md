@@ -6,9 +6,7 @@
 
 **Presentation**
 
-- Selected topic:
-
-- Reason topic was selected:
+We are looking to learn from years past to help us make investment decisions as we go into a slowing economy. We will be reviewing data from 2008 and 2009 but we will specifically be looking at IPOs. More specifically we will be looking IPOs per year, the initial valuations, and then subsequent performance in one year. Once we have this information we will make a predictive model to help us make the best choices going into our first investments. 
 
 - Description of the source of data:
 
