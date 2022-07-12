@@ -82,6 +82,22 @@ Main Branch:
  
 **Database**
 
+- Present a fully integrated database:
+
+  - Database stores static data for use during the project
+
+  - Database interfaces with the project in some format (e.g. webscraping or connect to the model)
+
+  - Includes at least 2 tables
+
+  - Includes at least one join
+
+  - Includes at least one connection string (using SQLAcademy or PyMongo)
+
+  - ERD with relationships
+
+**Dashboard**
+
 - Blueprint for the dasboard is created and includes all of the following:
 
   - Storyboard on Google Slides
