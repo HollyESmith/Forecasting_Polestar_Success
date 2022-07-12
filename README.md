@@ -18,6 +18,12 @@ Like Warren Buffet, we'd like to capitalize on a down market in the next recessi
 
 - Description of communication protocols:
 
+  - Slack channel created
+  
+  - Exchanged cell numbers & emails
+  
+  - Utilize class time Monday & Wednesday
+
 **Machine Learning Model**
 
 - Create a provisional machine learning model that stands in for the final model and
