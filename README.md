@@ -16,6 +16,15 @@ StockAnalysis.com for a list of IPOS launched in the last recession 2008. Kaggle
 - Questions we hope to answer with the data:
 Like Warren Buffet, we'd like to capitalize on a down market in the next recession by investing in "Recession Proof IPOs". Specifically buying low and selling high. Our model will try to predict if such a thing exists based on prior IPO performance in the last recession. 
 
+**Assumptions**
+
+When putting this model together there are a few assumptions we made, such as:
+- We assume the economy is headed into a recession
+- We assume the economy was in a recession in 2008 and we are using 2008 IPO data to train and test the model
+- We assume the current liquidity tightening is similiar to 2008 liquidity
+- Inflation is currently higher than it was in 2008, but we assume the higher inflation has already been factored into market prices
+- We assume the economy is similiary to the economy in 2008 - unemployment on the rise, companies tightening budgets and limiting hiring
+
 **GitHub Respository**
 
 - Description of communication protocols:
