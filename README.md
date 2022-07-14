@@ -28,15 +28,12 @@ When putting this model together a few assumptions were made, such as:
 
 **GitHub Respository**
 
-- Description of communication protocols:
-
-  - Slack channel created
+Description of communication protocols:
+- Slack channel created
+- Exchanged cell numbers & emails
+- Utilize class time Monday & Wednesday
   
-  - Exchanged cell numbers & emails
-  
-  - Utilize class time Monday & Wednesday
-  
-**Data Aquisition and Cleaning
+**Data Aquisition and Cleaning**
 
 Step 1 - Pull a list of 2008 IPOS from StockAnalysis.com and a list of US company data from Kaggle.
 
@@ -62,11 +59,15 @@ Step 7 - Rename and reorder columns. Drop irrelevant columns of data.
 
 **Database Integration**
 
-- Provisional database:
+- Provisional ERD:
 
-  i. has sample data that mimics expected final database structure
+![ERD](https://user-images.githubusercontent.com/97558998/179062689-019852b6-c839-4868-a8b4-328e94726a05.png)
+
+  - Sample data that mimics expected final database structure:
   
-  ii. Draft machine learning model is connected to the provisional database
+  <img width="1042" alt="sample database" src="https://user-images.githubusercontent.com/97558998/179062619-ee092061-c2b0-4cf3-b632-f41576cbaa47.png">
+  
+  - Draft machine learning model is connected to the provisional database - the Yahoo API is connected to the model to pull historical pricing.
   
 **Dashboard**
   
