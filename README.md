@@ -19,8 +19,8 @@ Like Warren Buffet, we'd like to capitalize on a down market in the next recessi
 **Assumptions**
 
 When putting this model together a few assumptions were made, such as:
-- We assume the economy is in a recession
-- We assume the economy was in a recession in 2008 so we are using 2008 IPO data for the model
+- We assume the economy is going into a recession
+- We assume the economy was going into a recession in 2008 and are using 2008 IPO data for the model
 - We assume the current market trends are similiar to the 2008 market trends
 - We assume the current liquidity tightening is similiar to 2008 liquidity
 - Inflation is currently higher than it was in 2008, but we assume the higher inflation has already been factored into market prices
