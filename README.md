@@ -89,6 +89,7 @@ Main Branch:
 - Description of preliminary data preprocessing
     
 Data Aquisition and Cleaning
+
 Step 1 - Pull a list of 2008 IPOS from StockAnalysis.com and a list of US company data from Kaggle.
 
 Step 2 - Read both files into a Pandas dataframe; IPOS_2008_df and us_companies_df.
@@ -127,7 +128,8 @@ Then combine both so we have our training data.
 With time series data, we have to be mindful of leakage when data from the future will be used to predict past prices. To avoid this issue split the data sequentially starting by predicting just the last 100 rows using the other rows.
 
   - Explanation of model choice, including limitations and benefits 
-Usings a random forest classifier to generate our predictions. This is a good "default" model for a lot of applications. It can pick up nonlinear relationships in the data, and is somewhat robust to overfitting with the right parameters and is good for our purposes of predicting a binary classifier 1 if the price goes up or 0 if the price goes down. 
+  
+Usings a random forest classifier to generate our predictions. This is a popular "default" model. It can pick up nonlinear relationships in the data and is somewhat robust to overfitting with the right parameters. It is good for our purposes of predicting a binary classifier 1 if the price goes up or 0 if the price goes down. 
 
  
 **Database**
