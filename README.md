@@ -32,22 +32,7 @@ Description of communication protocols:
 - Slack channel created
 - Exchanged cell numbers & emails
 - Utilize class time Monday & Wednesday
-  
-**Data Aquisition and Cleaning**
 
-Step 1 - Pull a list of 2008 IPOS from StockAnalysis.com and a list of US company data from Kaggle.
-
-Step 2 - Read both files into a Pandas dataframe; IPOS_2008_df and us_companies_df.
-
-Step 3 - Rename symbol column in IPO_2008_df to ticker.
-
-Step 4 - Merge two files with an inner merge on ticker column. 
-
-Step 5 - Inner merge produced only 66 complete rows of data out of 144. Compared with a left merge and screened for nan/null values, which were 80 rows. Researched some of the missing 80 companies to determine if they are still in existance. They are, which indicated our Kaggle data is incomplete. However, for our purpooses a sampling of 66 IPO/company data is fine and it is more important to proceed with complete a complete data set. We will set our parameters to these 66 IPOS. 
-
-Step 6 - Set Parameters to drop all rows with incomplete data. 
-
-Step 7 - Rename and reorder columns. Drop irrelevant columns of data. 
 
 **Machine Learning Model**
 
@@ -101,13 +86,49 @@ Main Branch:
 
 - Team members submit the code for their machine learning model, as well as:
 
-  - Description of preliminary data preprocessing
+- Description of preliminary data preprocessing
+    
+Data Aquisition and Cleaning
+Step 1 - Pull a list of 2008 IPOS from StockAnalysis.com and a list of US company data from Kaggle.
+
+Step 2 - Read both files into a Pandas dataframe; IPOS_2008_df and us_companies_df.
+
+Step 3 - Rename symbol column in IPO_2008_df to ticker.
+
+Step 4 - Merge two files with an inner merge on ticker column. 
+
+Step 5 - Inner merge produced only 66 complete rows of data out of 144. Compared with a left merge and screened for nan/null values, which were 80 rows. Researched some of the missing 80 companies to determine if they are still in existance. They are, which indicated our Kaggle data is incomplete. However, for our purpooses a sampling of 66 IPO/company data is fine and it is more important to proceed with complete a complete data set. We will set our parameters to these 66 IPOS. 
+
+Step 6 - Set Parameters to drop all rows with incomplete data. 
+
+Step 7 - Rename and reorder columns. Drop irrelevant columns of data. 
  
   - Description of preliminary feature engineering and preliminary feature selection, including their decision-making process 
- 
+  Use the Yahoo Finance API to pull historical pricing data and save in a csv file. 
+  
+  The columns of information are the following:
+  Open - the price the stock opened at.
+  High - the highest price during the day
+  Low - the lowest price during the day
+  Close - the closing price on the trading day
+  Volume - how many shares were traded
+  *Please note some dates are missing as the stock does not trade weeekends or federal holidays. 
+  
+  Plot the data to visualize the pricing data overtime. 
+  
+ Our target is if the price will go up or down tomorrow. If the price went up, the target will be 1 and if it went down, the      target will be 0.
+
+Next shift the data one day "forward" to predict the target price to ensures that we don't use same day data to make predictions. 
+
+Then combine both so we have our training data.
+
   - Description of how data was split into training and testing sets
 
+With time series data, we have to be mindful of leakage when data from the future will be used to predict past prices. To avoid this issue split the data sequentially starting by predicting just the last 100 rows using the other rows.
+
   - Explanation of model choice, including limitations and benefits 
+Usings a random forest classifier to generate our predictions. This is a good "default" model for a lot of applications. It can pick up nonlinear relationships in the data, and is somewhat robust to overfitting with the right parameters and is good for our purposes of predicting a binary classifier 1 if the price goes up or 0 if the price goes down. 
+
  
 **Database**
 
