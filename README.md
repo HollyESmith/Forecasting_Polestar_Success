@@ -8,7 +8,7 @@
 
 We are looking to learn from years past to help us make investment decisions as we go into a slowing economy. We will be reviewing data from 2008 and 2009 but we will specifically be looking at IPOs. More specifically we will be looking IPOs per year, the initial valuations, and then subsequent performance in one year. Once we have this information we will make a predictive model to help us make the best choices going into our first investments. 
 
-Now, what is an IPO? IPO stands for Initial Public Offering and is the very first sale of a stock issued by a company on the public market. This basically means that you are turning your private company into a public one. 
+Now, what is an IPO? IPO stands for Initial Public Offering and is the very first sale of a stock issued by a company on the public market. This basically means that you are turning your private company into a public one. Why would a company go public? This action raises money for the company that can help it to scale and grow, along with investing in infrastructure and talented employees. Overall the goal is for the company and investors to make a large amount of money personally and for company operations. 
 
 - Description of the source of data:
 StockAnalysis.com for a list of IPOS launched in the last recession 2008. Kaggle for a list of US Company information on these IPOS. Finally an API of historical pricing data to train our model for future price predictions.  
