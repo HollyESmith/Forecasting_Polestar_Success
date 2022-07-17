@@ -36,11 +36,7 @@ Description of communication protocols:
 
 **Machine Learning Model**
 
-- Create a provisional machine learning model that stands in for the final model and
-
-  i. takes in data from the provisional database
-
-  ii. outputs label for input data
+- Created a provisional machine learning model that stands in for the final model that takes in data from the provisional database and outputs labels for input data
 
 **Database Integration**
 
