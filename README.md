@@ -1,6 +1,9 @@
-# Recession_Resistant_IPOs
+# Recession_Resistant_IPOs (update title to be more TSLA specific?)
 
-## Deliverable 1, Due 7/17/2022
+**README must include** (will delete this text before final submission - this is a reminder):
+  - outline of the project (this may include images, but should be easy to follow and digest) 
+  - descriptions and explanations required in all other project deliverables
+
 
 ### Project Outline
 
@@ -36,55 +39,9 @@ Description of communication protocols:
 
 **Machine Learning Model**
 
-- Created a provisional machine learning model that stands in for the final model that takes in data from the provisional database and outputs labels for input data
-
-**Database Integration**
-
-- Provisional ERD:
-
-![ERD](https://user-images.githubusercontent.com/97558998/179062689-019852b6-c839-4868-a8b4-328e94726a05.png)
-
-  - Sample data that mimics expected final database structure:
-  
-  <img width="1042" alt="sample database" src="https://user-images.githubusercontent.com/97558998/179062619-ee092061-c2b0-4cf3-b632-f41576cbaa47.png">
-  
-  - Draft machine learning model is connected to the provisional database - the Yahoo API is connected to the model to pull historical pricing.
-  
-**Dashboard**
-  
-  No deliverables for segment 1
-  
-## Deliverable 2, Due 7/24/2022
-
-**Presentation**
-
-Presentation is drafted in Google Slides. 
-
-**GitHub Respository**
-
-Main Branch:
-
-- All code in the main branch is production-ready. Main branch should include:
-
-  - All code necessary to perform exporatory analysis
-  
-  - Some code necessary to complete the machine learning portion of the project.
-  
-- README must include: 
-
-  - outline of the project (this may include images, but should be easy to follow and digest) 
-
-  - descriptions and explanations required in all other project deliverables
-  
-- Each team member has at least four commits for the duration of the second segment 
-
-**Machine Learning Model**
-
-- Team members submit the code for their machine learning model, as well as:
-
 - Description of preliminary data preprocessing
  
-  - Description of preliminary feature engineering and preliminary feature selection, including their decision-making process 
+- Description of preliminary feature engineering and preliminary feature selection, including their decision-making process 
   
   Use the Yahoo Finance API to pull historical pricing data and save in a csv file. 
   
@@ -112,29 +69,21 @@ With time series data, we have to be mindful of leakage when data from the futur
   
 Usings a random forest classifier to generate our predictions. This is a popular "default" model. It can pick up nonlinear relationships in the data and is somewhat robust to overfitting with the right parameters. It is good for our purposes of predicting a binary classifier 1 if the price goes up or 0 if the price goes down. 
 
- 
-**Database**
+**Database Integration**
 
-- Present a fully integrated database:
+- Provisional ERD:
 
-  - Database stores static data for use during the project
+![ERD](https://user-images.githubusercontent.com/97558998/179062689-019852b6-c839-4868-a8b4-328e94726a05.png)
 
-  - Database interfaces with the project in some format (e.g. webscraping or connect to the model)
-
-  - Includes at least 2 tables
-
-  - Includes at least one join
-
-  - Includes at least one connection string (using SQLAcademy or PyMongo)
-
-  - ERD with relationships
-
+  - Sample data that mimics expected final database structure:
+  
+  <img width="1042" alt="sample database" src="https://user-images.githubusercontent.com/97558998/179062619-ee092061-c2b0-4cf3-b632-f41576cbaa47.png">
+  
+  - Draft machine learning model is connected to the provisional database - the Yahoo API is connected to the model to pull historical pricing.
+  
 **Dashboard**
 
 - Blueprint for the dasboard is created and includes all of the following:
-
-  - Storyboard on Google Slides
-  
-  - Description of the tools that will be used to create the final dashboard
-  
+  - Storyboard on Google Slides  
+  - Description of the tools that will be used to create the final dashboard  
   - Description of interactive element(s)
