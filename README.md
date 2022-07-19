@@ -83,22 +83,6 @@ Main Branch:
 - Team members submit the code for their machine learning model, as well as:
 
 - Description of preliminary data preprocessing
-    
-Data Aquisition and Cleaning
-
-Step 1 - Pull a list of 2008 IPOS from StockAnalysis.com and a list of US company data from Kaggle.
-
-Step 2 - Read both files into a Pandas dataframe; IPOS_2008_df and us_companies_df.
-
-Step 3 - Rename symbol column in IPO_2008_df to ticker.
-
-Step 4 - Merge two files with an inner merge on ticker column. 
-
-Step 5 - Inner merge produced only 66 complete rows of data out of 144. Compared with a left merge and screened for nan/null values, which were 80 rows. Researched some of the missing 80 companies to determine if they are still in existance. They are, which indicated our Kaggle data is incomplete. However, for our purpooses a sampling of 66 IPO/company data is fine and it is more important to proceed with complete a complete data set. We will set our parameters to these 66 IPOS. 
-
-Step 6 - Set Parameters to drop all rows with incomplete data. 
-
-Step 7 - Rename and reorder columns. Drop irrelevant columns of data. 
  
   - Description of preliminary feature engineering and preliminary feature selection, including their decision-making process 
   Use the Yahoo Finance API to pull historical pricing data and save in a csv file. 
