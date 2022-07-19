@@ -85,6 +85,7 @@ Main Branch:
 - Description of preliminary data preprocessing
  
   - Description of preliminary feature engineering and preliminary feature selection, including their decision-making process 
+  
   Use the Yahoo Finance API to pull historical pricing data and save in a csv file. 
   
   The columns of information are the following:
