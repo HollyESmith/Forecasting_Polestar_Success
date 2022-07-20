@@ -22,12 +22,14 @@ Like Warren Buffet, we'd like to capitalize on a down market in the next recessi
 **Assumptions**
 
 When putting this model together a few assumptions were made, such as:
-- We assume the economy is going into a recession
-- We assume the economy was going into a recession in 2008 and are using 2008 IPO data for the model
-- We assume the current market trends are similiar to the 2008 market trends
-- We assume the current liquidity tightening is similiar to 2008 liquidity
-- Inflation is currently higher than it was in 2008, but we assume the higher inflation has already been factored into market prices
-- We assume the economy is similiary to the economy in 2008 - unemployment on the rise, companies tightening budgets and limiting hiring
+- We assume the current market trends are similar to the 2010 market trends
+- We assume the current liquidity tightening is similar to 2010 liquidity
+- Inflation is currently higher than it was in 2010, but we assume the higher inflation has already been factored into market prices
+- We assume the economy is similar to the economy in 2010 - layoffs/unemployment on the rise, companies tightening budgets and limiting/stop hiring
+- We believe electric vehicles are increasing and will continue to do so, especially given:
+    - the current price of gas, 
+    - the favorable sentiment towards environmentally friendly products, and
+    - emission gas reduction goals
 
 **GitHub Respository**
 
@@ -83,7 +85,26 @@ Usings a random forest classifier to generate our predictions. This is a popular
   
 **Dashboard**
 
-- Blueprint for the dasboard is created and includes all of the following:
-  - Storyboard on Google Slides  
-  - Description of the tools that will be used to create the final dashboard  
-  - Description of interactive element(s)
+- Blueprint for the dashboard is created and includes all of the following:
+  Storyboard on Google Slides
+  - Slide 1 = Image of a Tesla
+  - Slide 2 = Overview of the project and Team
+  - Slide 3 = Data source information and technologies used for the project
+  - Slide 4 = Tesla competitor stock information
+  - Slide 5 = Information about the electric vehicle (EV) market
+  - Slide 6 = The question the team is trying to answer with the model's prediction
+  - Slide 7 = Information about the database and output
+  - Slide 8 = An analysis of the results of the model
+  - Slide 9 = The conclusion from the model's results
+  - Slide 10 = Outline of the Dashboard
+  - Slide 11 = Recommendations
+  - Slide 12 = Postmortem
+    
+  Description of the tools that will be used to create the final dashboard  
+  - We are planning on using Tableau to build and display the dashboard
+  - We intend to pull in the clean data output as well as the database information to create charts for some of the information
+  
+  Description of interactive element(s)
+  - We are planning on having a ticket tape scrolling over the page
+  - We would like to create a "model" portfolio of electric vehicles and components for electric vehicles  
+  - We are hoping to pull in relevant news stories as well
