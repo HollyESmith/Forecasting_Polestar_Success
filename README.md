@@ -29,7 +29,8 @@ When putting this model together a few assumptions were made, such as:
 - We believe electric vehicles are increasing and will continue to do so, especially given:
     - the current price of gas, 
     - the favorable sentiment towards environmentally friendly products, and
-    - emission gas reduction goals
+    - emission gas reduction goals in the US
+    - Tax incentive available with undetermined phaseout period 
 
 **GitHub Respository**
 
