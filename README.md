@@ -17,7 +17,7 @@ Polestar electric vehical company has gone public recently, in June 2022. We are
 StockAnalysis.com for a list of IPOS launched in the last recession 2008. Kaggle for a list of US Company information on these IPOS. Finally an API of historical pricing data to train our model for future price predictions.  
 
 - Questions we hope to answer with the data:
-Like Warren Buffet, we'd like to capitalize on a down market in the next recession by investing in "Recession Proof IPOs". Specifically buying low and selling high. Our model will try to predict if such a thing exists based on prior IPO performance in the last recession. 
+Based on the performance of Tesla from its IPO in 2010 at the tail end of a recession, how well can we anticipate doing when the timeline of out IPO is in simular conditions? How well suited are we to be competitive in the market. 
 
 **Assumptions**
 
