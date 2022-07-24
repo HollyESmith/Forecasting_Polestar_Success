@@ -75,11 +75,13 @@ Usings a random forest classifier to generate our predictions. This is a popular
 **Database Integration**
 
 - Provisional ERD:
-<img src="https://github.com/HollyESmith/Recession_Resistant_IPOs/blob/main/ERD.png">
+<img src="https://github.com/HollyESmith/Recession_Resistant_IPOs/blob/main/Resources/ERD.png">
 
   - Sample data that mimics expected final database structure:
   
-  <img width="1042" alt="sample database" src="https://user-images.githubusercontent.com/97558998/179062619-ee092061-c2b0-4cf3-b632-f41576cbaa47.png">
+  <img width="1042" alt="sample database" src="https://github.com/HollyESmith/Recession_Resistant_IPOs/blob/main/Resources/2010_IPOs.png">
+  
+  <img width="1042" alt="sample database" src="https://github.com/HollyESmith/Recession_Resistant_IPOs/blob/main/Resources/tesla_history.png">
   
   - Draft machine learning model is connected to the provisional database - the Yahoo API is connected to the model to pull historical pricing.
   
