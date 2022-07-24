@@ -75,8 +75,7 @@ Usings a random forest classifier to generate our predictions. This is a popular
 **Database Integration**
 
 - Provisional ERD:
-
-![ERD](https://user-images.githubusercontent.com/97558998/179062689-019852b6-c839-4868-a8b4-328e94726a05.png)
+<img src="https://github.com/HollyESmith/Recession_Resistant_IPOs/blob/main/ERD.png">
 
   - Sample data that mimics expected final database structure:
   
