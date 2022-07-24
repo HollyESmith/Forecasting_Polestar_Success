@@ -79,9 +79,9 @@ Usings a random forest classifier to generate our predictions. This is a popular
 
   - Sample data that mimics expected final database structure:
   
-  <img width="1042" alt="sample database" src="https://github.com/HollyESmith/Recession_Resistant_IPOs/blob/main/Resources/2010_IPOs.png">
+  <img src="https://github.com/HollyESmith/Recession_Resistant_IPOs/blob/main/Resources/2010_IPOs.png">
   
-  <img width="1042" alt="sample database" src="https://github.com/HollyESmith/Recession_Resistant_IPOs/blob/main/Resources/tesla_history.png">
+  <img src="https://github.com/HollyESmith/Recession_Resistant_IPOs/blob/main/Resources/tesla_history.png">
   
   - Draft machine learning model is connected to the provisional database - the Yahoo API is connected to the model to pull historical pricing.
   
