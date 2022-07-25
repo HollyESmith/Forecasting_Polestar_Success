@@ -100,29 +100,70 @@ We will add more predictors to see if we can improve accuracy. By adding some ro
 
 In addition to predicting the price pf Tesla a few days out, we also added an additional prediction comparing volume to price. 
 
-We do not see a direct correlation of higher stock prices and higher trading volume. However, when testing the stock price for each Electric Vehicle company (EV) using an arbitrary number of shares (in this example 1 billion shares traded), we see a pattern emerge. Most average EV companies have an average predicted share price of $200, with a range of $100-$330 with except of a few outliers. Faraday Future’s stock price is not predicted to do well at -$67 per share. However, Rivian is predicted at $582 per share respectively. 
+Next we try predicting a correlation of higher stock prices and higher trading volume. When testing the stock price for each Electric Vehicle company (EV) using an arbitrary number of shares (in this example 1 billion shares traded), we see a pattern emerge. 
+
+By editting our code for Telsa and using the other EV's tickers. We see share prices begin to rise: 
+
+Company Name	  Reg Predict
+
+Telsa	          864.0131697
+
+Polestar	      67.50218539
+
+Rivian	        551.8466879
+
+Li Auto	        142.1955553
+
+XPENG INC	      230.6610234
+
+Lucid	          177.0054577
+
+NIO	            100.3015588
+
+Fisker	        221.5805998
+
+Nikola	        330.1966441
+
+Faraday Future	-67.57118235
+	
+	
+	
+	![image](https://user-images.githubusercontent.com/97544078/180863473-78cbd0e0-2b55-4218-81d7-ba5bbb6736f3.png)
+
+
+Most average EV companies have an average predicted share price of $200, with a range of $100-$330 with except of a few outliers. Faraday Future’s stock price is not predicted to do well at -$67 per share. However, Rivian is predicted at $582 per share respectively. 
 
 Telsa is predicted at a whopping $864 per share, which is an unfair comparison to the average EV car company because Telsa does so much more. Tesla would be more on par with Ford or GM who also have other businesses. 
 
-If Polestar would like to be at the same level as Telsa, they would need to add additional businesses and marketing like Tesla who has tremendous brand recognition in the industry.  However, if they would like to stick with EV vehicles only, like the other EV companies, they have a good chance at share prices rising to the same level as your average EV company. Of course, other consideration would need to be made. 
+If Polestar would like to be at the same level as Telsa, they would need to add additional businesses and marketing like Tesla who has tremendous brand recognition in the industry.  However, if they would like to stick with EV vehicles only, like the other EV companies, they have a good chance at share prices rising to the same level as your average EV company. Of course, other considerations would need to be made. 
 
 For example adding in more of the following predictors:
+
 •	Account for activity post-close and pre-open
-	Early trading
-	Trading on other exchanges that open before the NASDAQ (to see what the global sentiment is)
+  
+    Such as eearly trading and trading on other exchanges that open before the NASDAQ to see what the global sentiment is. 
+  
 •	Economic indicators
-	Interest rates
-	Other important economic news
+
+	  Interest rates
+
+    Other important economic news
+    
 •	Key dates
-	Dividends
-	External factors like elections
+
+    Dividends
+
+    External factors like elections
+    
 •	Company milestones
-	Earnings calls
-	Analyst ratings
-	Major announcements
+
+    Earnings calls
+    Analyst ratings
+    Major announcements
+    
 •	Prices of related stocks
-	Other companies in the same sector
-	Key partners, customers, etc.
+    Other companies in the same sector
+    Key partners, customers, etc.
 
 
 
