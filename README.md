@@ -126,10 +126,6 @@ Nikola	        330.1966441
 
 Faraday Future	-67.57118235
 	
-	
-	
-	![image](https://user-images.githubusercontent.com/97544078/180863473-78cbd0e0-2b55-4218-81d7-ba5bbb6736f3.png)
-
 
 Most average EV companies have an average predicted share price of $200, with a range of $100-$330 with except of a few outliers. Faraday Future’s stock price is not predicted to do well at -$67 per share. However, Rivian is predicted at $582 per share respectively. 
 
