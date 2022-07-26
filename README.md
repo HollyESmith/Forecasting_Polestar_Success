@@ -100,9 +100,9 @@ We will add more predictors to see if we can improve accuracy. By adding some ro
 
 In addition to predicting the price pf Tesla a few days out, we also added an additional prediction comparing volume to price. 
 
-Next we try predicting a correlation of higher stock prices and higher trading volume. When testing the stock price for each Electric Vehicle company (EV) using an arbitrary number of shares (in this example 1 billion shares traded), we see a pattern emerge. 
+Next we try predicting a correlation of higher stock prices and higher trading volume using a linear regresion model. By testing the stock price for each Electric Vehicle company (EV) using an arbitrary number of shares (in this example 1 billion shares traded), we see a pattern emerge. 
 
-By editting our code for Telsa and using the other EV's tickers. We see share prices begin to rise: 
+By editting our code for Telsa and using the other EV's tickers. We see share prices begin to rise along with trading volume: 
 
 Company Name	  Reg Predict
 
