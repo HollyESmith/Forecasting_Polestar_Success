@@ -165,14 +165,7 @@ For example adding in more of the following predictors:
 
 **Database Integration**
 
-- Provisional ERD:
-<img src="https://github.com/HollyESmith/Recession_Resistant_IPOs/blob/main/Resources/ERD.png">
 
-  - Sample data that mimics expected final database structure:
-  
-  <img src="https://github.com/HollyESmith/Recession_Resistant_IPOs/blob/main/Resources/2010_IPOs.png">
-  
-  <img src="https://github.com/HollyESmith/Recession_Resistant_IPOs/blob/main/Resources/tesla_history.png">
   
   - Draft machine learning model is connected to the provisional database - the Yahoo API is connected to the model to pull historical pricing.
   
