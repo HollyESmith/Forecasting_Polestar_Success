@@ -42,124 +42,94 @@ Description of communication protocols:
 
 **Machine Learning Model**
 
-- Description of preliminary data preprocessing 
- 
-- Description of preliminary feature engineering and preliminary feature selection, including their decision-making process 
-  
-  Use the Yahoo Finance API to pull historical pricing data and save in a csv file to avoid having to continuously download from the API. 
-  
-  The columns of information are the following:
-  Date
-  Close
-  Volume 
-  Ticker
-  *Please note some dates are missing as the stock does not trade weeekends or federal holidays. 
-  
-  Dropping irrelevant collumns such as Splits and Dividends from our dataframe that add no value to our model. 
-  
-  Plot the data to visualize the pricing data overtime. 
-  
- Our target is if the price will go up or down tomorrow. If the price went up, the target will be 1 and if it went down, the target will be 0.
+Intro
 
- Shifting the data one day "forward" to predict the target price to ensures that we don't use same day data to make predictions. 
+In order to create a model that uses trading volume to predict future share price, we created two steps: 
 
-Then combine both (original and shifted one day forward data) so we have our training data.
+•	Predicts the future price of 10 Electric car company stocks
 
-  - Description of how data was split into training and testing sets
-
-With time series data, we have to be mindful of leakage when data from the future will be used to predict past prices. To avoid this issue we split the data sequentially starting by predicting just the last 100 rows using the other rows.
-
-  - Explanation of model choice, including limitations and benefits 
-  
-Usings a random forest classifier to generate our predictions. This is a popular "default" model. It can pick up nonlinear relationships in the data and is somewhat robust to overfitting with the right parameters. It is good for our purposes of predicting a binary classifier 1 if the price goes up or 0 if the price goes down. 
-
-
-We want to maximize our true positives - days when the algorithm predicts that the price will go up, and it actually goes go up. Therefore, we'll be using precision as our error metric for our algorithm, which is true positives / (false positives + true positives). If we were invsting, this will ensure that we minimize how much money we lose with false positives, days when we buy the stock, but the price actually goes down.
-
-We accept a lot of false negatives - days when we predict that the price will go down, but it actually goes up. This is okay, if we were investing we'd rather minimize our potential losses than maximize our potential gains. It also gives us a better picture of furture performance when measuring other EVs against Polestar. 
-
-To check how accurate the model iss we use precision to measure error. We do this by using the precision_score function from scikit-learn. Our model is directionally accurate 52% of the time, only slighly better than a coin flip. We can take a deeper look at the individual predictions and the actuals, and see where we're off.
-
-Backtesting
-
-Our model has room for improve it. We need to make predictions across the entire dataset, not just the last 100 rows. This will give us a more robust error estimate. The last 100 days may have atypical market conditions or other issues that make error metrics on those days unrealistic for future predictions (which are what we really care about).
-
-To do this, we'll need to backtest ensuring that we only use data from before the day that we're predicting. If we use data from after the day we're predicting, the algorithm is unrealistic and we won't be able to use future data to predict that past.
-
-Our backtesting method will loop over the dataset, and train a model every 750 rows. We'll make it a function so we can avoid rewriting the code if we want to backtest again.
-
-The backtesting function will:
-•	Split the training and test data
-•	Train a model
-•	Make predictions on the test data using predict_proba - this is because we want to really optimize for true positives. By default, the threshold for splitting 0/1 is .5, but we can set it to different values to tweak the precision. If we set it too high, we'll make fewer trades, but will have a lower potential for losses.
-
-As you can see, we're only making 64 trades. This is because we used .6 as a threshold for trading. However, our precision score increase a bit to 54%. 
-
-We will add more predictors to see if we can improve accuracy. By adding some rolling means, the model can evaluate the current price against recent prices. We'll also look at the ratios between different indicators. The precision score increased anogther point to 55% and we are trading a higher numnber of shares at 244. 
-
-In addition to predicting the price of Tesla a few days out, we also added an additional prediction comparing volume to price. 
-
-Next we try predicting a correlation of higher stock prices and higher trading volume using a linear regresion model. By testing the stock price for each Electric Vehicle company (EV) using an arbitrary number of shares (in this example 1 billion shares traded), we see a pattern emerge. 
-
-By editting our code for Telsa and using the other EV's tickers. We see share prices begin to rise along with trading volume: 
-
-Company Name	  Reg Predict
-
-Telsa	          864.0131697
-
-Polestar	      67.50218539
-
-Rivian	        551.8466879
-
-Li Auto	        142.1955553
-
-XPENG INC	      230.6610234
-
-Lucid	          177.0054577
-
-NIO	            100.3015588
-
-Fisker	        221.5805998
-
-Nikola	        330.1966441
-
-Faraday Future	-67.57118235
+•	Compared trading volume to stock prices
 	
+•	Step 1: Description of preliminary data preprocessing
 
-Most average EV companies have an average predicted share price of $200, with a range of $100-$330 with except of a few outliers. Faraday Future’s stock price is not predicted to do well at -$67 per share. However, Rivian is predicted at $582 per share respectively. 
+Using the Yahoo Finance API to pull historical pricing data for each of the 10 electric vehicle companies and save in csv files. Then create a combined file of historical pricing for all 10 EVs.  Drop irrelevant columns such as Splits and Dividends from our dataframe that add no value to our model.
 
-Telsa is predicted at a whopping $864 per share, which is an unfair comparison to the average EV car company because Telsa does so much more. Tesla would be more on par with Ford or GM who also have other businesses. 
+The columns of information are the following: 
 
-If Polestar would like to be at the same level as Telsa, they would need to add additional businesses and marketing like Tesla who has tremendous brand recognition in the industry.  However, if they would like to stick with EV vehicles only, like the other EV companies, they have a good chance at share prices rising to the same level as your average EV company. Of course, other considerations would need to be made. 
+Date 
+Close 
+Volume 
+Ticker 
 
-For example adding in more of the following predictors:
+•	Step 2: Start Building the Model
 
-•	Account for activity post-close and pre-open
-  
-    Such as early trading and trading on other exchanges that open before the NASDAQ to see what the global sentiment is. 
-  
-•	Economic indicators
+Our target for the model will be to predict the price tomorrow. If the price went up, the target will be 1 and if it went down, the target will be 0.
 
-	  Interest rates
+<img width="1085" alt="Start Building the Model " src="https://user-images.githubusercontent.com/97544078/181644570-61b8f07d-8ecb-49d8-8456-fb6fa154d771.png">
 
-    Other important economic news
-    
-•	Key dates
+ 
+•	Explanation of Model Choice 
 
-    Dividends
+Using a Random Forest Classifier to generate our predictions. This is a popular "default" model. It can pick up nonlinear relationships in the data and is somewhat robust to overfitting with the right parameters. It is good for our purposes of predicting a binary classifier: 1 if the price goes up or 0 if the price goes down.
 
-    External factors like elections
-    
-•	Company milestones
+•	Benefits of Model Choice 
 
-    Earnings calls
-    Analyst ratings
-    Major announcements
-    
-•	Prices of related stocks
-    Other companies in the same sector
-    Key partners, customers, etc.
+We want to maximize our true positives - days when the algorithm predicts that the price will go up, and it actually goes go up. Therefore, we'll be using precision as our error metric for our algorithm, which is true positives / (false positives + true positives). If we were investing, this will ensure that we minimize how much money we lose with false positives, days when we buy the stock, but the price actually goes down.
+•	Limitations of Model Choice
 
+We accept a lot of false negatives - days when we predict that the price will go down, but it actually goes up. This is okay. If we were investing we'd rather minimize our potential losses than maximize our potential gains. It also gives us a better picture of future performance when measuring other EVs against Polestar.
+
+To check how accurate the model is we use precision to measure error. We do this by using the precision score function from scikit-learn. Our model is directionally accurate 52% of the time, only slightly better than a coin flip. We can take a deeper look at the individual predictions and the actuals, and see where we're off.
+
+•	Description of how data was split into training and testing sets
+
+Combine both (original and shifted one day forward data) so we have our training data.
+With time series data, we have to be mindful of leakage (when data from the future will be used to predict past prices). To avoid this issue we split the data sequentially starting by predicting just the last 100 rows using the other rows.
+
+•	Step 3 Optimizing the Model
+
+Beck Testing
+
+Our back testing method will loop over the dataset, and train a model every 750 rows using a function.
+The back testing function will: 
+
+• Split the training and test data 
+
+• Train a model 
+
+• Make predictions on the test data using predict_proba  and rolling means to optimize for true positives.
+Our precision score increased from 52% to 55%.
+
+•	Using Our Model to Predict Price Based on Volume
+
+Next we predict a correlation of higher stock prices and higher trading volume using a linear regression model. By testing the stock price for each Electric Vehicle company (EV) using an arbitrary number of shares (in this example 1 million and billion shares traded), we see a pattern emerge.
+
+<img width="1080" alt="TSLA Price at 1 Billion Volume" src="https://user-images.githubusercontent.com/97544078/181644452-456fe517-19ae-4d91-bce3-588021d7ed3d.png">
+
+
+•	Results of Prediction
+
+The average EV company has an average predicted share price of $200, with a range of $100-$330 with except of a few outliers. Faraday Future’s stock price is not predicted to do well at -$67 per share. However, Rivian is predicted at $582 per share respectively.
+Telsa is predicted at a whopping $864 per share, which is an unfair comparison to the average EV car company because Telsa does so much more. Tesla would be more on par with Ford or GM who also have other businesses.
+
+If Polestar would like to be at the same level as Telsa, they would need to add additional businesses and marketing like Tesla who has tremendous brand recognition. However, if they would like to stick with EV vehicles only, like the other EV companies, they have a good chance at share prices rising to the same level as it’s competitors. Of course, other considerations would need to be taken into account for future success.
+
+ <img width="555" alt="EV Volume Predictors" src="https://user-images.githubusercontent.com/97544078/181644363-19632d60-75f2-4388-8dbb-dc11727baf40.png">
+
+•	Future Recommendations 
+
+The following predictors could also be used to gauge future predictions:
+
+Economic indicators: 
+Interest Rates 
+News/Sentiment
+Company Fundamentals: 
+Earnings and Dividends
+Analyst Ratings
+Company Milestones and Major Announcements
+
+
+ 
 
 
 **Database Integration**
