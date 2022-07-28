@@ -14,7 +14,7 @@ We are looking to learn from past experiences to help us make investment decisio
 Polestar electric vehical company has gone public recently, in June 2022. We are looking to learn from the performance of Tesla and other EV companies over the years to predict when the best time is to invest in Polestar.
 
 - Description of the source of data:
-StockAnalysis.com for a list of IPOS launched in the last recession 2008. Kaggle for a list of US Company information on these IPOS. Finally an API of historical pricing data to train our model for future price predictions using volume as a predictor.  
+Yahoo Finance API of historical pricing data to train our model for future price predictions using volume as a predictor.  
 
 - Questions we hope to answer with the data:
 Based on the performance of Tesla from its IPO in 2010 at the tail end of a recession, how well can we anticipate doing when the timeline of our IPO, Polestar is in simular conditions? How well suited are we to be competitive in the market. 
@@ -49,20 +49,19 @@ Description of communication protocols:
   Use the Yahoo Finance API to pull historical pricing data and save in a csv file to avoid having to continuously download from the API. 
   
   The columns of information are the following:
-  Open - the price the stock opened at.
-  High - the highest price during the day
-  Low - the lowest price during the day
-  Close - the closing price on the trading day
-  Volume - how many shares were traded
+  Date
+  Close
+  Volume 
+  Ticker
   *Please note some dates are missing as the stock does not trade weeekends or federal holidays. 
   
-  Dropping irrelevant collumns such as Splits and Dividends from our dataframe that aadd no value to our model. 
+  Dropping irrelevant collumns such as Splits and Dividends from our dataframe that add no value to our model. 
   
   Plot the data to visualize the pricing data overtime. 
   
  Our target is if the price will go up or down tomorrow. If the price went up, the target will be 1 and if it went down, the target will be 0.
 
-Next shift the data one day "forward" to predict the target price to ensures that we don't use same day data to make predictions. 
+ Shifting the data one day "forward" to predict the target price to ensures that we don't use same day data to make predictions. 
 
 Then combine both (original and shifted one day forward data) so we have our training data.
 
@@ -83,22 +82,22 @@ To check how accurate the model iss we use precision to measure error. We do thi
 
 Backtesting
 
-Our model isn't great, but luckily we can still improve it. Before we do that, let's figure out how to make predictions across the entire dataset, not just the last 100 rows. This will give us a more robust error estimate. The last 100 days may have has atypical market conditions or other issues that make error metrics on those days unrealistic for future predictions (which are what we really care about).
+Our model has room for improve it. We need to make predictions across the entire dataset, not just the last 100 rows. This will give us a more robust error estimate. The last 100 days may have atypical market conditions or other issues that make error metrics on those days unrealistic for future predictions (which are what we really care about).
 
 To do this, we'll need to backtest ensuring that we only use data from before the day that we're predicting. If we use data from after the day we're predicting, the algorithm is unrealistic and we won't be able to use future data to predict that past.
 
 Our backtesting method will loop over the dataset, and train a model every 750 rows. We'll make it a function so we can avoid rewriting the code if we want to backtest again.
 
-In the backtesting function, we will:
+The backtesting function will:
 •	Split the training and test data
 •	Train a model
 •	Make predictions on the test data using predict_proba - this is because we want to really optimize for true positives. By default, the threshold for splitting 0/1 is .5, but we can set it to different values to tweak the precision. If we set it too high, we'll make fewer trades, but will have a lower potential for losses.
 
-As you can see, we're only making 64 trades! This is because we used .6 as a threshold for trading. However, our precision score increase a bit to 54%. 
+As you can see, we're only making 64 trades. This is because we used .6 as a threshold for trading. However, our precision score increase a bit to 54%. 
 
 We will add more predictors to see if we can improve accuracy. By adding some rolling means, the model can evaluate the current price against recent prices. We'll also look at the ratios between different indicators. The precision score increased anogther point to 55% and we are trading a higher numnber of shares at 244. 
 
-In addition to predicting the price pf Tesla a few days out, we also added an additional prediction comparing volume to price. 
+In addition to predicting the price of Tesla a few days out, we also added an additional prediction comparing volume to price. 
 
 Next we try predicting a correlation of higher stock prices and higher trading volume using a linear regresion model. By testing the stock price for each Electric Vehicle company (EV) using an arbitrary number of shares (in this example 1 billion shares traded), we see a pattern emerge. 
 
@@ -137,7 +136,7 @@ For example adding in more of the following predictors:
 
 •	Account for activity post-close and pre-open
   
-    Such as eearly trading and trading on other exchanges that open before the NASDAQ to see what the global sentiment is. 
+    Such as early trading and trading on other exchanges that open before the NASDAQ to see what the global sentiment is. 
   
 •	Economic indicators
 
