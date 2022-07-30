@@ -70,27 +70,28 @@ Our target for the model will be to predict the price tomorrow. If the price wen
  
 •	Explanation of Model Choice 
 
-Using a Random Forest Classifier to generate our predictions. This is a popular "default" model. It can pick up nonlinear relationships in the data and is somewhat robust to overfitting with the right parameters. It is good for our purposes of predicting a binary classifier: 1 if the price goes up or 0 if the price goes down.
+Using a Random Forest Classifier to generate our predictions. It is good for our purposes of predicting a binary classifier: 1 if the price goes up or 0 if the price goes down.
 
 •	Benefits of Model Choice 
 
-We want to maximize our true positives - days when the algorithm predicts that the price will go up, and it actually goes go up. Therefore, we'll be using precision as our error metric for our algorithm, which is true positives / (false positives + true positives). If we were investing, this will ensure that we minimize how much money we lose with false positives, days when we buy the stock, but the price actually goes down.
+We want to maximize our true positives. Therefore, we'll be using precision as our error metric for our algorithm, which is true positives / (false positives + true positives). If we were investing, this will ensure that we minimize how much money we lose with false positives, days when we buy the stock, but the price actually goes down.
 •	Limitations of Model Choice
 
 We accept a lot of false negatives - days when we predict that the price will go down, but it actually goes up. This is okay. If we were investing we'd rather minimize our potential losses than maximize our potential gains. It also gives us a better picture of future performance when measuring other EVs against Polestar.
 
-To check how accurate the model is we use precision to measure error. We do this by using the precision score function from scikit-learn. Our model is directionally accurate 52% of the time, only slightly better than a coin flip. We can take a deeper look at the individual predictions and the actuals, and see where we're off.
+To check how accurate the model is we use precision to measure error. We do this by using the precision score function from scikit-learn. Our model is directionally accurate 52% of the time, only slightly better than a coin flip. 
 
 •	Description of how data was split into training and testing sets
 
 Combine both (original and shifted one day forward data) so we have our training data.
-With time series data, we have to be mindful of leakage (when data from the future will be used to predict past prices). To avoid this issue we split the data sequentially starting by predicting just the last 100 rows using the other rows.
+
+With time series data, we have to be mindful of leakage. To avoid this issue we split the data sequentially starting by predicting just the last 100 rows using the other rows.
 
 •	Step 3 Optimizing the Model
 
 Beck Testing
 
-Our back testing method will loop over the dataset, and train a model every 750 rows using a function.
+Our back testing method will loop over the dataset, and train the model every 750 rows using a function.
 The back testing function will: 
 
 • Split the training and test data 
@@ -109,10 +110,9 @@ Next we predict a correlation of higher stock prices and higher trading volume u
 
 •	Results of Prediction
 
-The average EV company has an average predicted share price of $200, with a range of $100-$330 with except of a few outliers. Faraday Future’s stock price is not predicted to do well at -$67 per share. However, Rivian is predicted at $582 per share respectively.
-Telsa is predicted at a whopping $864 per share, which is an unfair comparison to the average EV car company because Telsa does so much more. Tesla would be more on par with Ford or GM who also have other businesses.
+The average EV company has an average predicted share price of $200, with a range of $100-$330 with except of a few outliers. Faraday Future’s stock price is not predicted to do well at -$67 per share. However, Rivian is predicted at $582 per share respectively. Telsa is predicted at a whopping $864 per share, which is an unfair comparison to the average EV car company because Telsa does so much more. 
 
-If Polestar would like to be at the same level as Telsa, they would need to add additional businesses and marketing like Tesla who has tremendous brand recognition. However, if they would like to stick with EV vehicles only, like the other EV companies, they have a good chance at share prices rising to the same level as it’s competitors. Of course, other considerations would need to be taken into account for future success.
+If Polestar would like to be at the same level as Telsa, they would need to add additional businesses and marketing like Tesla who has tremendous brand recognition. However, if they would like to stick with EV vehicles only, they have a good chance at share prices rising to the same level as the average EV companies. Of course, other considerations would need to be taken into account for future success.
 
  <img width="555" alt="EV Volume Predictors" src="https://user-images.githubusercontent.com/97544078/181644363-19632d60-75f2-4388-8dbb-dc11727baf40.png">
 
