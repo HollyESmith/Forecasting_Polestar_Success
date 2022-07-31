@@ -6,7 +6,7 @@
 
 We are looking to learn from past experiences to help us make investment decisions as we go into a slowing economy. We will be reviewing stock data from Tesla starting in 2010 to today. Once we have this information we will make a predictive model to help us make the best choices going into our first investments. 
 
-Polestar electric vehical company has gone public recently, in June 2022. We are looking to learn from the performance of Tesla and other EV companies over the years to predict when the best time is to invest in Polestar.
+Polestar electric vehical company went public recently in June 2022. Can past performance of Tesla and other EV companies predict when the best time is to invest in Polestar?
 
 - Description of the source of data:
 Yahoo Finance API of historical pricing data to train our model for future price predictions using volume as a predictor.  
@@ -34,10 +34,9 @@ Description of communication protocols:
 - Exchanged cell numbers & emails
 - Utilize class time Monday & Wednesday
 
-
 **Machine Learning Model**
 
-Intro
+<table><tr><td>Intro</td></tr></table>
 
 In order to create a model that uses trading volume to predict future share price, we created two steps: 
 
@@ -45,44 +44,39 @@ In order to create a model that uses trading volume to predict future share pric
 
 •	Compared trading volume to stock prices
 	
-•	Step 1: Description of preliminary data preprocessing
+<ins>Step 1: Description of preliminary data preprocessing</ins>
 
 Using the Yahoo Finance API to pull historical pricing data for each of the 10 electric vehicle companies and save in csv files. Then create a combined file of historical pricing for all 10 EVs.  Drop irrelevant columns such as Splits and Dividends from our dataframe that add no value to our model.
 
-The columns of information are the following: 
+The columns of information are the following:  1) Date, 2) Close, 3) Volume, and 4) Ticker
 
-Date 
-Close 
-Volume 
-Ticker 
-
-•	Step 2: Start Building the Model
+<ins>Step 2: Start Building the Model</ins>
 
 Our target for the model will be to predict the price tomorrow. If the price went up, the target will be 1 and if it went down, the target will be 0.
 
 <img width="1085" alt="Start Building the Model " src="https://user-images.githubusercontent.com/97544078/181644570-61b8f07d-8ecb-49d8-8456-fb6fa154d771.png">
 
- 
-•	Explanation of Model Choice 
+<table><tr><td>Explanation of Model Choice</td></tr></table>
 
 Using a Random Forest Classifier to generate our predictions. It is good for our purposes of predicting a binary classifier: 1 if the price goes up or 0 if the price goes down.
 
-•	Benefits of Model Choice 
+<table><tr><td>Benefits of Model Choice</td></tr></table> 
 
 We want to maximize our true positives. Therefore, we'll be using precision as our error metric for our algorithm, which is true positives / (false positives + true positives). If we were investing, this will ensure that we minimize how much money we lose with false positives, days when we buy the stock, but the price actually goes down.
-•	Limitations of Model Choice
+
+<table><tr><td>Limitations of Model Choice</td></tr></table>
 
 We accept a lot of false negatives - days when we predict that the price will go down, but it actually goes up. This is okay. If we were investing we'd rather minimize our potential losses than maximize our potential gains. It also gives us a better picture of future performance when measuring other EVs against Polestar.
 
 To check how accurate the model is we use precision to measure error. We do this by using the precision score function from scikit-learn. Our model is directionally accurate 52% of the time, only slightly better than a coin flip. 
 
-•	Description of how data was split into training and testing sets
+<table><tr><td>Description of how data was split into training and testing sets</td></tr></table>
 
 Combine both (original and shifted one day forward data) so we have our training data.
 
 With time series data, we have to be mindful of leakage. To avoid this issue we split the data sequentially starting by predicting just the last 100 rows using the other rows.
 
-•	Step 3 Optimizing the Model
+<ins>Step 3: Optimizing the Model</ins>
 
 Beck Testing
 
