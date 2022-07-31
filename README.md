@@ -1,10 +1,5 @@
 # Predicting Polestar Success
 
-**README must include** (will delete this text before final submission - this is a reminder):
-  - outline of the project (this may include images, but should be easy to follow and digest) 
-  - descriptions and explanations required in all other project deliverables
-
-
 ### Project Outline
 
 **Presentation**
