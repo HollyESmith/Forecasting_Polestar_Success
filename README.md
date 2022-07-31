@@ -6,13 +6,14 @@
 
 We are looking to learn from past experiences to help us make investment decisions as we go into a slowing economy. We will be reviewing stock data from Tesla starting in 2010 to today. Once we have this information we will make a predictive model to help us make the best choices going into our first investments. 
 
-Polestar electric vehical company went public recently in June 2022. Can past performance of Tesla and other EV companies predict when the best time is to invest in Polestar?
+Polestar electric vehical company went public recently in June 2022. Can past performance of Tesla and other EV companies predict when the best time is to invest in Polestar? 
 
 - Description of the source of data:
 Yahoo Finance API of historical pricing data to train our model for future price predictions using volume as a predictor.  
 
 - Questions we hope to answer with the data:
 Based on the performance of Tesla from its IPO in 2010 at the tail end of a recession, how well can we anticipate doing when the timeline of our IPO, Polestar is in simular conditions? How well suited are we to be competitive in the market. 
+
 
 **Assumptions**
 
@@ -27,12 +28,14 @@ When putting this model together a few assumptions were made, such as:
     - emission gas reduction goals in the US
     - Tax incentive available with undetermined phaseout period 
 
+
 **GitHub Respository**
 
 Description of communication protocols:
 - Slack channel created
 - Exchanged cell numbers & emails
 - Utilize class time Monday & Wednesday
+
 
 **Machine Learning Model**
 
@@ -48,7 +51,7 @@ In order to create a model that uses trading volume to predict future share pric
 
 Using the Yahoo Finance API to pull historical pricing data for each of the 10 electric vehicle companies and save in csv files. Then create a combined file of historical pricing for all 10 EVs.  Drop irrelevant columns such as Splits and Dividends from our dataframe that add no value to our model.
 
-The columns of information are the following:  1) Date, 2) Close, 3) Volume, and 4) Ticker
+The columns of information are the following:  1) Date; 2) Close; 3) Volume; and 4) Ticker
 
 <ins>Step 2: Start Building the Model</ins>
 
@@ -78,7 +81,7 @@ With time series data, we have to be mindful of leakage. To avoid this issue we 
 
 <ins>Step 3: Optimizing the Model</ins>
 
-Beck Testing
+Back Testing
 
 Our back testing method will loop over the dataset, and train the model every 750 rows using a function.
 The back testing function will: 
@@ -90,14 +93,13 @@ The back testing function will:
 • Make predictions on the test data using predict_proba  and rolling means to optimize for true positives.
 Our precision score increased from 52% to 55%.
 
-•	Using Our Model to Predict Price Based on Volume
+<table><tr><td>Using Our Model to Predict Price Based on Volume</td></tr></table>
 
 Next we predict a correlation of higher stock prices and higher trading volume using a linear regression model. By testing the stock price for each Electric Vehicle company (EV) using an arbitrary number of shares (in this example 1 million and billion shares traded), we see a pattern emerge.
 
 <img width="1080" alt="TSLA Price at 1 Billion Volume" src="https://user-images.githubusercontent.com/97544078/181644452-456fe517-19ae-4d91-bce3-588021d7ed3d.png">
 
-
-•	Results of Prediction
+<table><tr><td>Results of Prediction</td></tr></table>
 
 The average EV company has an average predicted share price of $200, with a range of $100-$330 with except of a few outliers. Faraday Future’s stock price is not predicted to do well at -$67 per share. However, Rivian is predicted at $582 per share respectively. Telsa is predicted at a whopping $864 per share, which is an unfair comparison to the average EV car company because Telsa does so much more. 
 
@@ -105,28 +107,25 @@ If Polestar would like to be at the same level as Telsa, they would need to add 
 
  <img width="555" alt="EV Volume Predictors" src="https://user-images.githubusercontent.com/97544078/181644363-19632d60-75f2-4388-8dbb-dc11727baf40.png">
 
-•	Future Recommendations 
+<table><tr><td>Future Recommendations</td></tr></table>
 
 The following predictors could also be used to gauge future predictions:
 
 Economic indicators: 
-Interest Rates 
-News/Sentiment
+- Interest Rates 
+- News/Sentiment
+
 Company Fundamentals: 
-Earnings and Dividends
-Analyst Ratings
-Company Milestones and Major Announcements
-
-
- 
+- Earnings and Dividends
+- Analyst Ratings
+- Company Milestones and Major Announcements
 
 
 **Database Integration**
-
-
   
   - Draft machine learning model is connected to the provisional database - the Yahoo API is connected to the model to pull historical pricing.
   
+
 **Dashboard**
 
 - Blueprint for the dashboard is created and includes all of the following:
