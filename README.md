@@ -4,7 +4,7 @@
 
 **Presentation**
 
-We are looking to learn from past experiences to help us make investment decisions as we go into a slowing economy. We will be reviewing stock data from Tesla starting in 2010 to today. Once we have this information we will make a predictive model to help us make the best choices going into our first investments. 
+We are looking to learn from past experiences to help us make investment decisions as we go into a slowing economy. We will be reviewing stock data from Tesla and 9 other electric vehicle companies. Once we have this information we will make a predictive model to help us make the best choices going into our first investments. 
 
 Polestar electric vehical company went public recently in June 2022. Can past performance of Tesla and other EV companies predict when the best time is to invest in Polestar? 
 
@@ -41,11 +41,7 @@ Description of communication protocols:
 
 <table><tr><td>Intro</td></tr></table>
 
-In order to create a model that uses trading volume to predict future share price, we created two steps: 
-
-•	Predicts the future price of 10 Electric car company stocks
-
-•	Compared trading volume to stock prices
+In order to create a model that uses trading volume to predict future share price, we first predicted the future price of 10 electric car company stocks, and then compared trading volume to stock prices.
 	
 <ins>Step 1: Description of preliminary data preprocessing</ins>
 
