@@ -18,10 +18,10 @@ Based on the performance of Tesla from its IPO in 2010 at the tail end of a rece
 **Assumptions**
 
 When putting this model together a few assumptions were made, such as:
-- We assume the current market trends are similar to the 2010 market trends
-- We assume the current liquidity tightening is similar to 2010 liquidity
-- Inflation is currently higher than it was in 2010, but we assume the higher inflation has already been factored into market prices
-- We assume the economy is similar to the economy in 2010 - layoffs/unemployment on the rise, companies tightening budgets and limiting/stop hiring
+- We assume the current market trends will continue
+- We assume the current liquidity tightening will continue, given the inflataion rate
+- We assume the higher inflation rate has already been factored into market prices
+- We assume the current economy will continue - layoffs/unemployment on the rise, companies tightening budgets and limiting/stop hiring
 - We believe electric vehicles are increasing and will continue to do so, especially given:
     - the current price of gas, 
     - the favorable sentiment towards environmentally friendly products, and
@@ -149,5 +149,5 @@ Company Fundamentals:
   
   Description of interactive element(s)
   - We are pulling the Tableau story into the dashboard for the presentation
-  - The analysis of EV companies 
+  - The analysis of EV companies will be interactive
   - We have added news stories related to the ten EV companies to the dashboard
