@@ -141,25 +141,25 @@ Company Milestones and Major Announcements
 **Dashboard**
 
 - Blueprint for the dashboard is created and includes all of the following:
-  Storyboard on Google Slides
-  - Slide 1 = Image of a Tesla
+  Storyboard on Tableau
+  - Slide 1 = Title slide
   - Slide 2 = Overview of the project and Team
   - Slide 3 = Data source information and technologies used for the project
-  - Slide 4 = Tesla competitor stock information
-  - Slide 5 = Information about the electric vehicle (EV) market
+  - Slide 4 = Polestar IPO
+  - Slide 5 = Polestar's story
   - Slide 6 = The question the team is trying to answer with the model's prediction
   - Slide 7 = Information about the database and output
-  - Slide 8 = An analysis of the results of the model
-  - Slide 9 = The conclusion from the model's results
-  - Slide 10 = Outline of the Dashboard
+  - Slide 8 = Machine learning model's analysis
+  - Slide 9 = Machine learning model's results
+  - Slide 10 = Dashboard
   - Slide 11 = Recommendations
   - Slide 12 = Postmortem
     
   Description of the tools that will be used to create the final dashboard  
-  - We are planning on using Tableau to build and display the dashboard
-  - We intend to pull in the clean data output as well as the database information to create charts for some of the information
+  - We will be using Tableau to build and display the presentation
+  - Tableau will be used to analyze ten public electric vehicle (EV) companies
   
   Description of interactive element(s)
-  - We are planning on having a ticket tape scrolling over the page
-  - We would like to create a "model" portfolio of electric vehicles and components for electric vehicles  
-  - We are hoping to pull in relevant news stories as well
+  - We are pulling the Tableau story into the dashboard for the presentation
+  - The analysis of EV companies 
+  - We have added news stories related to the ten EV companies to the dashboard
