@@ -121,9 +121,9 @@ Company Fundamentals:
   
   - For our project we used the top 10 electic vehicle compananies in the word and the historical data for their stock prices and sales volume.
   
-  To start we created an ERD to plan out our tables: (NEEDS TO BE UPDATED)
+  To start we created an ERD to plan out our tables:
   
-  <img width="400" alt="ERD" src="https://github.com/HollyESmith/Forecasting_Polestar_Success/blob/main/Resources/ERD.png">
+  <img width="400" alt="ERD" src="https://github.com/HollyESmith/Forecasting_Polestar_Success/blob/main/Database/Final%20ERD.png">
   
   Then used this to create our tables in PGAdmin where we used SQL:
   
