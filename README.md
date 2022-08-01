@@ -122,12 +122,15 @@ Company Fundamentals:
   - For our project we used the top 10 electic vehicle compananies in the word and the historical data for their stock prices and sales volume.
   
   To start we created an ERD to plan out our tables: (NEEDS TO BE UPDATED)
+  
   <img width="400" alt="ERD" src="https://github.com/HollyESmith/Forecasting_Polestar_Success/blob/main/Resources/ERD.png">
   
   Then used this to create our tables in PGAdmin where we used SQL:
+  
   <img width="400" alt="SQL Database" src="https://github.com/HollyESmith/Forecasting_Polestar_Success/blob/main/Resources/SQL%20Database.png">
   
   Once we determined that joining the tables with SQL would not be binificial we switched to using Python and Jupyter Notebook:
+  
   <img width="400" alt="database integration" src="https://github.com/HollyESmith/Forecasting_Polestar_Success/blob/main/Resources/database%20integration.png">
   
   Then we exported the joined file as a new CSV as you can see in the Database file. 
