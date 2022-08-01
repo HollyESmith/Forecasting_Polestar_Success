@@ -137,7 +137,7 @@ Company Fundamentals:
   - Slide 9 = Recommendations
   - Slide 10 = Postmortem
   - Slide 11 = Q & A
- 
+
   Description of the tools that will be used to create the final dashboard  
   - We will be using Tableau to build and display the presentation
   - Tableau will be used to analyze ten public electric vehicle (EV) companies
