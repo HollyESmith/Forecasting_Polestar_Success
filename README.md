@@ -126,18 +126,17 @@ Company Fundamentals:
 
 - Blueprint for the dashboard is created and includes all of the following:
   Storyboard on Tableau
-  - Slide 1 = Title slide
+  - Slide 1 = Predicting Polestar Success
   - Slide 2 = Overview of the project and Team
-  - Slide 3 = Data source information and technologies used for the project
-  - Slide 4 = Polestar IPO
-  - Slide 5 = Polestar's story
-  - Slide 6 = The question the team is trying to answer with the model's prediction
-  - Slide 7 = Information about the database and output
-  - Slide 8 = Machine learning model's analysis
-  - Slide 9 = Machine learning model's results
-  - Slide 10 = Dashboard
-  - Slide 11 = Recommendations
-  - Slide 12 = Postmortem
+  - Slide 3 = Technologies used for project
+  - Slide 4 = Data Exploration
+  - Slide 5 = Model analysis
+  - Slide 6 = Model analysis continued
+  - Slide 7 = Model analysis results
+  - Slide 8 = [Link to Tableau Dashboard](https://public.tableau.com/app/profile/cheryl3177/viz/Forecasting_Polestar_Success/PredictingPolestarSuccess?publish=yes)
+  - Slide 9 = Recommendations
+  - Slide 10 = Postmortem
+  - Slide 11 = Q & A
     
   Description of the tools that will be used to create the final dashboard  
   - We will be using Tableau to build and display the presentation
