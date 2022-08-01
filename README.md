@@ -129,7 +129,7 @@ Company Fundamentals:
   
   <img width="400" alt="SQL Database" src="https://github.com/HollyESmith/Forecasting_Polestar_Success/blob/main/Resources/SQL%20Database.png">
   
-  Once we determined that joining the tables with SQL would not be binificial we switched to using Python and Jupyter Notebook:
+  Once we determined that joining the tables with SQL would not be beneficial we switched to using Python and Jupyter Notebook:
   
   <img width="400" alt="database integration" src="https://github.com/HollyESmith/Forecasting_Polestar_Success/blob/main/Resources/database%20integration.png">
   
